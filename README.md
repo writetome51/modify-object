@@ -4,40 +4,38 @@ The contents of `overwritingObject` are merged into `objectToModify`.
 
 
 ## Examples
-```
+```ts
 let objToModify = {prop1: 10, prop2: 20, prop3: 30};
 let changes = {prop1: 100, prop2: 200, prop4: 1000};
 modifyObject(objToModify, changes);
 
 // objToModify is now  {prop1: 100, prop2: 200, prop3: 30, prop4: 1000}
 
-let objToModify = {
-	prop1: function(){return 1;},  
-	prop2: function(){return 'hello';}
+objToModify = {
+    prop1: 10, prop2: 20, prop3: 30
 };
-let changes = {
-    prop1: function(){return 'blah';}
+changes = {
+    prop1: 100, prop2: 200, prop4: 1000,
+    prop5: function () {
+        return this.prop1 + this.prop3;
+    }
 };
 modifyObject(objToModify, changes);
 
-/*****************
-objToModify is now  {
-	prop1: function(){return 'blah';},  
-	prop2: function(){return 'hello';}
-}
-****************/
+console.log(objToModify.prop5());
+// console: '130'
 ```
 
 ## Installation
 
 ```bash
-npm i  @writetome51/merge-objects
+npm i  @writetome51/modify-object
 ```
 
 ## Loading
-```
+```ts
 // If using TypeScript:
-import {modifyObject} from '@writetome51/merge-objects';
+import {modifyObject} from '@writetome51/modify-object';
 // If using ES5 JavaScript:
-var modifyObject = require('@writetome51/merge-objects').modifyObject;
+var modifyObject = require('@writetome51/modify-object').modifyObject;
 ```

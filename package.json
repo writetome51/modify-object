@@ -1,8 +1,8 @@
 {
   "name": "@writetome51/modify-object",
   "version": "1.0.0",
-  "description": "Function takes 2 object parameters.  The second object is merged into the first.  Only the first object is modified",
- "main": "dist/index.js",
+  "description": "Function merges one object into another",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc"
@@ -15,8 +15,8 @@
     "object",
     "objects",
     "manipulation",
-   "modify",
-   "merge"
+    "modify",
+    "merge"
   ],
   "author": "Steve Thompson",
   "license": "MIT",
