@@ -1,0 +1,29 @@
+{
+  "name": "@writetome51/modify-object",
+  "version": "1.0.0",
+  "description": "Function takes 2 object parameters.  The second object is merged into the first.  Only the first object is modified",
+ "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/writetome51/modify-object.git"
+  },
+  "keywords": [
+    "object",
+    "objects",
+    "manipulation",
+   "modify",
+   "merge"
+  ],
+  "author": "Steve Thompson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/writetome51/modify-object/issues"
+  },
+  "homepage": "https://github.com/writetome51/modify-object#readme",
+  "dependencies": {
+  }
+}
