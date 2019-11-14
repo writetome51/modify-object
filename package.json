@@ -1,6 +1,6 @@
 {
   "name": "@writetome51/modify-object",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Function merges one object into another",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
