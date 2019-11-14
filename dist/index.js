@@ -1,9 +1,9 @@
 "use strict";
-// The contents of `overwritingObject` are merged into `objectToModify`.
+// The contents of `changes` are merged into `objectToModify`.
 Object.defineProperty(exports, "__esModule", { value: true });
-function modifyObject(objectToModify, overwritingObject) {
+function modifyObject(objectToModify, changes) {
     // @ts-ignore
-    Object.assign(objectToModify, overwritingObject);
+    Object.assign(objectToModify, changes);
 }
 exports.modifyObject = modifyObject;
 /********************

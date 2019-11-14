@@ -1,1 +1,1 @@
-export declare function modifyObject(objectToModify: Object, overwritingObject: Object): void;
+export declare function modifyObject(objectToModify: any, changes: any): void;

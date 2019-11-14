@@ -1,8 +1,8 @@
-// The contents of `overwritingObject` are merged into `objectToModify`.
+// The contents of `changes` are merged into `objectToModify`.
 
-export function modifyObject(objectToModify, overwritingObject): void {
+export function modifyObject(objectToModify, changes): void {
 	// @ts-ignore
-	Object.assign(objectToModify, overwritingObject);
+	Object.assign(objectToModify, changes);
 }
 
 /********************

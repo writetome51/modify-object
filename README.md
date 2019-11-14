@@ -1,29 +1,26 @@
-# modifyObject(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;objectToModify,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;overwritingObject<br>): void
+# modifyObject(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;objectToModify,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;changes<br>): void
 
-The contents of `overwritingObject` are merged into `objectToModify`.
+`changes` are merged into `objectToModify`.  
+`changes` is not modified.
 
 
 ## Examples
 ```ts
-let objToModify = {prop1: 10, prop2: 20, prop3: 30};
-let changes = {prop1: 100, prop2: 200, prop4: 1000};
+let objToModify = {prop1: 10, prop2: 20};
+let changes = {prop1: 100, prop3: 30};
 modifyObject(objToModify, changes);
 
-// objToModify is now  {prop1: 100, prop2: 200, prop3: 30, prop4: 1000}
+// objToModify is now  {prop1: 100, prop2: 20, prop3: 30}
 
-objToModify = {
-    prop1: 10, prop2: 20, prop3: 30
-};
 changes = {
-    prop1: 100, prop2: 200, prop4: 1000,
-    prop5: function () {
-        return this.prop1 + this.prop3;
+    getSum: function () {
+        return this.prop1 + this.prop2 + this.prop3;
     }
 };
 modifyObject(objToModify, changes);
 
-console.log(objToModify.prop5());
-// console: '130'
+objToModify.getSum();
+// --> 150
 ```
 
 ## Installation
