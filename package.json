@@ -1,7 +1,8 @@
 {
   "name": "@writetome51/modify-object",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Function merges one object into another",
+ "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {

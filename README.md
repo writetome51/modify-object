@@ -5,7 +5,7 @@
 
 
 ## Examples
-```ts
+```js
 let objToModify = {prop1: 10, prop2: 20};
 let changes = {prop1: 100, prop3: 30};
 modifyObject(objToModify, changes);
@@ -26,13 +26,10 @@ objToModify.getSum();
 ## Installation
 
 ```bash
-npm i  @writetome51/modify-object
+npm i @writetome51/modify-object
 ```
 
 ## Loading
-```ts
-// If using TypeScript:
+```js
 import {modifyObject} from '@writetome51/modify-object';
-// If using ES5 JavaScript:
-var modifyObject = require('@writetome51/modify-object').modifyObject;
 ```

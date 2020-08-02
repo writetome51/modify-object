@@ -1,11 +1,8 @@
-"use strict";
 // The contents of `changes` are merged into `objectToModify`.
-Object.defineProperty(exports, "__esModule", { value: true });
-function modifyObject(objectToModify, changes) {
+export function modifyObject(objectToModify, changes) {
     // @ts-ignore
     Object.assign(objectToModify, changes);
 }
-exports.modifyObject = modifyObject;
 /********************
 Example:
 
