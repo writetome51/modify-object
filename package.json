@@ -2,12 +2,8 @@
   "name": "@writetome51/modify-object",
   "version": "2.0.0",
   "description": "Function merges one object into another",
- "type": "module",
+  "type": "module",
   "main": "index.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "build": "tsc"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/writetome51/modify-object.git"
