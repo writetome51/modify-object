@@ -1,13 +1,16 @@
-import { modifyObject } from './index';
+import { modifyObject } from './index.js';
+
 // Make sure existing properties can be overwritten and new properties can be added.
+
 let objToModify = { prop1: 10, prop2: 20, prop3: 30 };
 let changes = { prop1: 100, prop2: 200, prop10: 1000 };
 modifyObject(objToModify, changes);
+
 if (objToModify.prop1 === 100 && objToModify.prop2 === 200 &&
-    objToModify.prop3 === 30 && objToModify.prop10 === 1000)
-    console.log('test 1 passed');
-else
-    console.log('test 1 FAILED');
+    objToModify.prop3 === 30 && objToModify.prop10 === 1000) console.log('test 1 passed');
+else console.log('test 1 FAILED');
+
+
 // Make sure existing methods can be overwritten and new methods can be added.
 objToModify = {
     prop1: 10, prop2: 20, prop3: 30,
@@ -27,10 +30,10 @@ changes = {
 modifyObject(objToModify, changes);
 if (objToModify.prop1 === 100 && objToModify.prop2 === 20 &&
     objToModify.prop3 === 30 && objToModify.prop10 === 1000 &&
-    objToModify.prop4() === 120 && objToModify.prop5() === 130)
-    console.log('test 2 passed');
-else
-    console.log('test 2 FAILED');
+    objToModify.prop4() === 120 && objToModify.prop5() === 130) console.log('test 2 passed');
+else console.log('test 2 FAILED');
+
+
 // Make sure inherited properties can be overwritten and also be accessed in new methods.
 export class TestClass {
     constructor() {
@@ -38,12 +41,14 @@ export class TestClass {
         this.prop2 = 2;
     }
 }
+
 export class TestSubclass extends TestClass {
     constructor() {
         super(...arguments);
         this.prop3 = this.prop1 + this.prop2; // 3
     }
 }
+
 export class TestSubSubclass extends TestSubclass {
     constructor() {
         super(...arguments);
@@ -57,15 +62,11 @@ changes = {
     }
 };
 modifyObject(objToModify, changes);
-if (objToModify.getSumOfAll() === 10)
-    console.log('test 3 passed');
-else
-    console.log('test 3 FAILED');
-if (objToModify instanceof TestClass)
-    console.log('test 4 passed');
-else
-    console.log('test 4 FAILED');
-if (objToModify instanceof TestSubSubclass)
-    console.log('test 5 passed');
-else
-    console.log('test 5 FAILED');
+if (objToModify.getSumOfAll() === 10) console.log('test 3 passed');
+else console.log('test 3 FAILED');
+
+if (objToModify instanceof TestClass) console.log('test 4 passed');
+else console.log('test 4 FAILED');
+
+if (objToModify instanceof TestSubSubclass) console.log('test 5 passed');
+else console.log('test 5 FAILED');
