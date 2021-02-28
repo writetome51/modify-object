@@ -1,16 +1,17 @@
-# modifyObject(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;object,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;changes: object<br>): void
+# modifyObject(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;objectToModify,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;changes: object<br>): void
 
 `changes` are merged into `objectToModify`.  
-`changes` is not modified.
+`changes` is not modified. `objectToModify` keeps its own prototype chain.
 
 
 ## Examples
 ```js
 let objToModify = {prop1: 10, prop2: 20};
 let changes = {prop1: 100, prop3: 30};
-modifyObject(objToModify, changes);
 
-// objToModify is now  {prop1: 100, prop2: 20, prop3: 30}
+modifyObject(objToModify, changes);
+console.log(objToModify);
+// { prop1: 100, prop2: 20, prop3: 30 }
 
 changes = {
     getSum: function () {
@@ -18,9 +19,8 @@ changes = {
     }
 };
 modifyObject(objToModify, changes);
-
-objToModify.getSum();
-// --> 150
+console.log(objToModify.getSum());
+// 150
 ```
 
 ## Installation
